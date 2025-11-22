@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+
+    <content-processor>
+        <tag-rule-bundle class="org.sitemesh.content.tagrules.html.Sm2TagRuleBundle"/>
+    </content-processor>
+
+    <!-- Admin -->
+    <mapping path="/views/admin/*" decorator="/WEB-INF/decorators/admin.jsp"/>
+
+    <!-- Users (đã login / khu user riêng) -->
+    <mapping path="/views/users/*" decorator="/WEB-INF/decorators/user.jsp"/>
+
+    <!-- Public -->
+    <mapping path="/views/home.jsp" decorator="/WEB-INF/decorators/web.jsp"/>
+
+    <!-- Auth pages không decor -->
+    <mapping path="/views/login.jsp" exclude="true"/>
+    <mapping path="/views/register.jsp" exclude="true"/>
+    <mapping path="/views/reset_matkhau.jsp" exclude="true"/>
+
+    <!-- static -->
+    <mapping path="/assets/*" exclude="true"/>
+    <mapping path="/uploads/*" exclude="true"/>
+
+</sitemesh>
